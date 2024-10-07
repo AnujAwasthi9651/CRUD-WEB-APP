@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+    <h1>Add User</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.first_name.label }}<br>
+            {{ form.first_name(size=32) }}<br>
+        </div>
+        <div>
+            {{ form.last_name.label }}<br>
+            {{ form.last_name(size=32) }}<br>
+        </div>
+        <div>
+            {{ form.phone_number.label }}<br>
+            {{ form.phone_number(size=32) }}<br>
+        </div>
+        <div>
+            {{ form.email_id.label }}<br>
+            {{ form.email_id(size=32) }}<br>
+        </div>
+        <div>
+            {{ form.address.label }}<br>
+            {{ form.address(size=32) }}<br>
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+    <a href="{{ url_for('index') }}">Back to list</a>
+{% endblock %}
